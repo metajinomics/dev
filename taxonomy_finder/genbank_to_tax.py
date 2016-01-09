@@ -100,12 +100,12 @@ def main():
             flag = 1
         if (gbline.strip()[:2] == "//" and plasmid == 0):
             flist = get_taxonomy(locus,taxon)
+            for item in flist:
+                fwrite.write(item+'\t')
+            fwrite.write('\n')
             flag = 0
         elif (gbline.strip()[:2] == "//" and plasmid == 1):
             plasmid = 0
-        for item in flist: 
-            fwrite.write(item+'\t')
-        fwrite.write('\n')
 
 if __name__ == '__main__':
     main()

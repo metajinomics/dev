@@ -20,7 +20,7 @@ def get_16s(genbankname):
                     pos = [start, end]
                     print pos
                     l.append(pos)
-                    print '>' + genbankname.split('.')[0] + org + ' '+ '16S rRNA gene' + str(n)                
+                    print '>' + genbankname.split('.')[0] + org + ' '+ '16S rRNA gene' + str(n)
                     print feat.extract(genome.seq)
                     n =+ 1
     return n

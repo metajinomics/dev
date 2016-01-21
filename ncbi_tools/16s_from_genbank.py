@@ -28,6 +28,8 @@ def get_16s(genbankname):
 def main():
     file = open(sys.argv[1],'r')
     for line in file:
+        if(line.strip()==""):
+            continue
         genbankname = line.strip()+".gbk"
         print genbankname
         get_16s(genbankname)

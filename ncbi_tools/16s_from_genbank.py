@@ -18,11 +18,11 @@ def get_16s(genbankname):
                     start = feat.location.start.position
                     end = feat.location.end.position
                     pos = [start, end]
-                    print pos
                     l.append(pos)
-                    print '>' + genbankname.split('.')[0] + org + ' '+ '16S rRNA gene' + str(n)
-                    print feat.extract(genome.seq)
-                    n =+ 1
+                    if n==0:
+                        print '>' + genbankname.split('.')[0] + org + ' '+ '16S rRNA gene' + str(n)
+                        print feat.extract(genome.seq)
+                    n = n + 1
     return n
 
 def main():
@@ -31,7 +31,7 @@ def main():
         if(line.strip()==""):
             continue
         genbankname = line.strip()+".gbk"
-        print genbankname
+
         get_16s(genbankname)
 
 if __name__ == '__main__':

@@ -43,16 +43,17 @@ class get_each_gene_fasta {
 		int end = Integer.parseInt(parts[3]);
 		String direc = parts[4];
 		String temp = assem.get(id);
+		String subseq = temp.substring(start,end);
 		// if reverse direction then get reverse compliment
 		if(direc.equals("-")){
-		    temp = tran.translate(temp);
+		    subseq = tran.translate(subseq);
 		    StringBuilder input1 = new StringBuilder();
-		    input1.append(temp);
+		    input1.append(subseq);
 		    input1 = input1.reverse();
-		    temp = input1.toString();
+		    subseq = input1.toString();
 		}
 		Result.println(line);
-		Result.println(temp.substring(start,end));
+		Result.println(subseq);
 		faaFile_scan.nextLine();
 	    }
         }catch (FileNotFoundException e){

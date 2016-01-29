@@ -100,7 +100,7 @@ def main():
             flag = 1
         if (gbline.strip()[:2] == "//" and plasmid == 0):
             flist = get_taxonomy(locus,taxon)
-            ful_tax = ""
+            full_tax = ""
             for item in flist:
                 full_tax = full_tax + item+'\t'
             #full_tax = full_tax + '\n'

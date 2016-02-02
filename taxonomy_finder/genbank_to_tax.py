@@ -104,7 +104,7 @@ def main():
             for item in flist:
                 full_tax = full_tax + item+'\t'
             full_tax = full_tax + '\n'
-            fwrite(full_tax)
+            fwrite.write(full_tax)
             flag = 0
         elif (gbline.strip()[:2] == "//" and plasmid == 1):
             plasmid = 0

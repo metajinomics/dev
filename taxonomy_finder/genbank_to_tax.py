@@ -84,7 +84,7 @@ def get_taxonomy(locus,taxon):
 
 def main():
     fread = open(sys.argv[1],'r')
-    #fwrite = open(sys.argv[2],'w')
+    fwrite = open(sys.argv[2],'w')
     locus = ""
     taxon = ""
     flag = 0
@@ -103,8 +103,8 @@ def main():
             full_tax = ""
             for item in flist:
                 full_tax = full_tax + item+'\t'
-            #full_tax = full_tax + '\n'
-            print full_tax
+            full_tax = full_tax + '\n'
+            fwrite(full_tax)
             flag = 0
         elif (gbline.strip()[:2] == "//" and plasmid == 1):
             plasmid = 0

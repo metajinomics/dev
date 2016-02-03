@@ -4,4 +4,4 @@ sys.path.append('./utils')
 import taxonomy_finder
 
 filename = sys.argv[1]
-taxonomy_finder.full(filename)
+print taxonomy_finder.full(filename)

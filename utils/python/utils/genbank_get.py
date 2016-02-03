@@ -41,6 +41,9 @@ def definition(genbankfile):
         if("DEFINITION" in line):
             splt = line.strip().split(' ')
             for i in range(1,len(splt)):
-                definition = definition + splt[i]
+                if(definition == ""):
+                    definition = splt[i]
+                else:
+                    definition = definition +' ' + splt[i]
             break
     return definition

@@ -17,3 +17,10 @@ def taxon(genbankfile):
             taxon = splt[1][:-1]
             break
     return taxon
+
+def has_chromosome(genbankfile):
+    has = False
+    for line in open(genbankfile,'r'):
+        if("chromosome=" in line):
+            has = True
+    return has

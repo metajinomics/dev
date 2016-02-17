@@ -10,6 +10,6 @@ for gbline in fread:
     if("organism=" in gbline):
         organism = gbline.strip().split("=")[1][1:-1]
     if(gbline.strip()[:2] == "//" ):
-        print locus+" "+organism
+        print locus+"\t"+organism
         locus = ""
         organism = ""

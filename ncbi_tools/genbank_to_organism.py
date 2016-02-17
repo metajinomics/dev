@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import sys
-import genbank_get
+
 
 fread = open(sys.argv[1],'r')
 locus = ""

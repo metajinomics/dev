@@ -8,7 +8,7 @@ for gbline in fread:
     if ("LOCUS" in gbline):
         locus = gbline.strip().split(" ")[7]
     if("taxon:" in gbline):
-        organism = gbline.strip().split(":")[1][1:-1]
+        organism = gbline.strip().split(":")[1][:-1]
     if(gbline.strip()[:2] == "//" ):
         print locus+"\t"+organism
         locus = ""

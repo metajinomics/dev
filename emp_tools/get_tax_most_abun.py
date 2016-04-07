@@ -5,7 +5,7 @@ import sys
 dict = {}
 for line in open(sys.argv[1],'r'):
     spl = line.strip().split(':')
-    dict[spl[0]]=line.strip()
+    dict[spl[0]]=spl[1].strip()
 
 for line in open(sys.argv[2],'r'):
     spl = line.strip().split('\t')

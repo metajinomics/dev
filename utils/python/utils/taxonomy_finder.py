@@ -107,3 +107,12 @@ def full(filename):
             plasmid = 0
 
     return full_tax
+    
+def from_id(taxid):
+    full_tax = ""
+    locus = ""
+    taxon = taxid
+    flist = get_taxonomy(locus,taxon)
+    for item in flist:
+        full_tax = full_tax + item+'\t'
+    return full_tax

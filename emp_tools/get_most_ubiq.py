@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#usage: python get_id_most_ubiq.py 100most_uniq.txt soil_emp_table.nonzero ../soil_emp_table.biom ../Soil_EMP_taxonomy/JavaNewSoilRepSet_tax_assignments.txt
+#usage: python get_most_ubiq.py 100most_uniq.txt soil_emp_table.nonzero ../soil_emp_table.biom ../Soil_EMP_taxonomy/JavaNewSoilRepSet_tax_assignments.txt
 import sys
 
 dict = {}

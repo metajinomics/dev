@@ -10,5 +10,5 @@ count = table.nonzero_counts('observation',True)
 otuid = table.ids(axis='observation')
 #print len(a)
 #print len(b)
-for i in range(0,len(a)):
+for i in range(0,len(count)):
     print otuid[i],count[i]

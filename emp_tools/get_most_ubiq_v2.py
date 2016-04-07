@@ -5,7 +5,7 @@ import sys
 tax_dict = {}
 for line in open(sys.argv[1],'r'):
     spl = line.strip().split(' ')
-    dict[spl[0]]=spl[1]
+    tax_dict[spl[0]]=spl[1]
 
 for line in open(sys.argv[2]):
     spl = line.strip().split('\t')

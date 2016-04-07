@@ -1,4 +1,5 @@
 #!/usr/bin/python
+#usage : python get_tax_most_abun.py 100_most_abun_id.txt taxonomyfile
 import sys
 
 dict = {}

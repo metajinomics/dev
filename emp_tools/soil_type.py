@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# usage: python soil_type.py SampleSoilOrders.unix.fix.txt subset_table.txt > output.txt
+# usage: python soil_type.py SampleSoilOrders.unix.fix.txt subset_table.txt > soil_type_count.txt
 import sys
 
 typeread = open(sys.argv[1],'r')

@@ -14,5 +14,6 @@ for line in reversed(fread):
         flag = 1
         continue
     spl = line.strip().split(':')
+    i += 1
     sum = sum + float(spl[1].strip())
     print '\t'.join([str(i),str(sum)])

@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # find abudance 
-# usage: python count_abun_emp.py id summary > abun
+# usage: python count_abun_emp.py summary id > abun
 import sys
 sread = open(sys.argv[1],'r')
 sum = {}

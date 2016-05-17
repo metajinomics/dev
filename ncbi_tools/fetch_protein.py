@@ -1,3 +1,7 @@
+#!/bin/usr/python
+#this script get protein sequence from genbank file
+# usage: python fetch_protein.py genbankfile > output.fa
+
 from Bio import SeqIO
 import sys
 gb_file = sys.argv[1]
@@ -16,6 +20,7 @@ for record in gb_record.features:
         for x in record.qualifiers:
             if (x == "translation"):
                 ids = [">",record.qualifiers["locus_tag"][0]]
-                print "".join(ids)
+                product = record.qualifiers["product"][0]
+                print "".join(ids),product
                 print record.qualifiers["translation"][0]
 #        print record.extract(gb_record.seq).translate(table=11,cds=True)

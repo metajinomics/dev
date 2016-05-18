@@ -10,7 +10,7 @@ import urllib
 import sys
 import subprocess
 from Bio import SeqIO
-import pycurl
+#import pycurl
 import cStringIO
 from Bio.SeqRecord import SeqRecord
 

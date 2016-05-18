@@ -1,7 +1,7 @@
 #!/usr/bin/python
 #This script find protein sequence and nucleotide sequence from given gene information
-#usage: python gene_list_to_seq.py ChiA.list.down.txt protein_seq.fa nucleo_seq.fa
-#input file: NCBI_accession_number (tap) gene start position (tap) gene end position (tap) direction
+#usage: python gene_list_to_seq.py listgenome folder protein_seq.fa nucleo_seq.fa
+#input file: NCBI_accession_number 
 #genbank files are required to store in folder
 
 import os
@@ -15,8 +15,8 @@ import cStringIO
 from Bio.SeqRecord import SeqRecord
 
 #This function read genbank file
-def read_genbank(item):
-    genbankname = "test/"+item+".gbk"
+def read_genbank(item,dir):
+    genbankname = dir+"/"+item+".gbk"
     genome=SeqIO.read(genbankname, 'genbank')
     dat= SeqIO.parse(genbankname, 'genbank')
     return genome,dat
@@ -46,13 +46,14 @@ def check_gene(genome,record,output_handle,nu_out):
 def main():
     #read id file
     fread = open(sys.argv[1],'r')
-    output_handle = open(sys.argv[2], "w")
-    nu_out = open(sys.argv[3],'w')
+    dir = sys.argv[2]
+    output_handle = open(sys.argv[3], "w")
+    nu_out = open(sys.argv[4],'w')
     for line in fread:
         spl = line.strip().split('\t')
         ids = spl[0]
         #read genbank file
-        genome,dat = read_genbank(ids)
+        genome,dat = read_genbank(ids,dir)
         #run
         for record in list(dat):
             check_gene(genome,record,output_handle,nu_out)

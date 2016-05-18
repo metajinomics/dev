@@ -39,8 +39,9 @@ class get_each_gene_fasta {
 		String line = faaFile_scan.nextLine();
 		String[] parts = line.split("_");
 		String id = parts[0]+"_"+parts[1];
-		int start = Integer.parseInt(parts[2].trim());
-		int end = Integer.parseInt(parts[3].trim());
+		//System.out.println(parts.length);
+		int start = Integer.parseInt(parts[parts.length - 3].trim());
+		int end = Integer.parseInt(parts[parts.length - 2].trim());
 		String direc = parts[4];
 		String temp = assem.get(id);
 		String subseq = temp.substring(start,end);

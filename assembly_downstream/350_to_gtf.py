@@ -11,5 +11,6 @@ for line in open(sys.argv[1],'r'):
     start = spl[le - 3]
     end = spl[le - 2]
     strand = spl[le - 1]
-    result = [ids,"coding_region","gene",start,end,".",strand,".","unkown_function"]
+    att = "gene_id \""+ids+"\";"
+    result = [ids,"coding_region","gene",start,end,".",strand,".",att]
     print "\t".join(result)

@@ -6,8 +6,8 @@ from string import maketrans
 import os
 
 def add_seq(seq,ids,result):
-    if( ids.has_key(seq[0])):
-        samid = ids[seq[0]]
+    if( ids.has_key(seq[0].split(' ')[0])):
+        samid = ids[seq[0].split(' ')[0]]
         if (result.has_key(samid)):
             temp = result[samid]
             temp.append('\n'.join(seq))
@@ -29,7 +29,7 @@ def check_barcode(seq,dict,result):
         if (result.has_key(samid)):
             print "duplicated id"
         else:
-            result[seq[0]]=dict[barcode]
+            result[seq[0].split(' ')[0]]=dict[barcode]
 
 def main():
     #step1: read mapping file

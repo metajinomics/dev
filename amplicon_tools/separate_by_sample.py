@@ -40,7 +40,7 @@ def main():
             continue
         else:
             spl = line.strip().split('\t')
-            dict[spl[1]] = spl[0]
+            #dict[spl[1]] = spl[0]
             rev = get_rc(spl[1])
             dict[rev] = spl[0]
     inforead.close()

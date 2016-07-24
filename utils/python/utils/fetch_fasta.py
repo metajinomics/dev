@@ -28,11 +28,13 @@ def from_multi_blast(filename):
             seq = get_fasta(id,spl[8],spl[9])
             seqs.append(seq)
         elif (flag == 0 and spl[0] != ids):
-            gbk_out_file = os.path.join('./',spl[0]+'.fa')
+            na = spl[0].split('|')
+            gbk_out_file = os.path.join('./',na[len(na)-1]+'.fa')
             flag = 1
             ids = spl[0]
         elif (flag == 1 and spl[0] != ids):
+            na = spl[0].split('|')
             open(gbk_out_file, "w").write(''.join(seqs))
-            gbk_out_file = os.path.join('./',spl[0]+'.fa')
+            gbk_out_file = os.path.join('./',na[len(na)-1]+'.fa')
             ids = spl[0]
     open(gbk_out_file, "w").write(''.join(seqs))

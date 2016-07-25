@@ -42,17 +42,19 @@ def cal_tm(one,two):
             tm = 64.9 + 41*(g+c - 16.4)/(a+t+g+c)
     return tm
     
-def compare(y,mer):
+def compare(y,mer,cont,co):
     tm = []
     for i in range(0,len(y)-len(mer)+1):
         a = y[i:len(mer)+i]
         b = mer
         temp = cal_tm(a,b)
-        if(temp > 45):
+        cont += 1
+        if(temp > 40):
+            co += 1
             print y
             print temp
             tm.append(temp)
-    return tm
+    return cont,co
 
 #read primers
 primer = []
@@ -62,7 +64,8 @@ for line in open(sys.argv[1],'r'):
     primer.append(line.strip().upper())
 
 #print primer
-
+cont = 0
+co = 0
 for x in primer:
     se = fl(x)
     #print x
@@ -72,5 +75,6 @@ for x in primer:
         for mer in kmer:
             #print y
             #print mer
-            mt = compare(y,mer)
-            #print mt
+            cont,co = compare(y,mer,cont,co)
+print co
+print cont

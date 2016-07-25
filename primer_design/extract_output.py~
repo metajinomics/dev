@@ -1,6 +1,0 @@
-
-for line in open(sys.argv[1]):
-    if(line[:23] == 'Percent Seq Coverage: '):
-        spl = line.split(': ')
-        per = float(spl[1])
-        print per

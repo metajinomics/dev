@@ -1,0 +1,14 @@
+#!/usr/bin/python
+# find primer interaction
+# python primer_dimer.py primer.fa
+
+import sys
+
+#read primers
+primer = []
+for line in open(sys.argv[1],'r'):
+    if(line[:1]=='>'):
+        continue
+    primer.append(line.strip())
+
+print primer

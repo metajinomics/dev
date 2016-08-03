@@ -4,7 +4,7 @@
 
 import sys
 import reverse_complement
-
+import os
 def make_primer3_input(fprimer,rprimer,target):
     fwrite = open("test.primer3input.txt",'w')
     fwrite.write("SEQUENCE_TEMPLATE="+target+'\n')

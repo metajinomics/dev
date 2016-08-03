@@ -73,9 +73,11 @@ flag = 0
 for line in outread:
     if("ERROR" in line):
         print "error"
+        print line,
         flag = 1
     elif("PROBLEMS" in line):
         print "problem"
+        print line,
         flag = 1
 if (flag == 0):
     print "no problem"

@@ -66,3 +66,17 @@ make_primer3_input(fprimer,rprimer,target)
 
 #run primer3
 os.system("/home/ubuntu/primer3-2.3.7/src/primer3_core < test.primer3input.txt -strict_tags -output=./test.out.txt")
+
+#check if there are error
+outread = open("test.out.txt",'r')
+flag = 0
+for line in outread:
+    if("ERROR" in line):
+        print "error"
+        flag = 1
+    elif("PROBLEMS" in line):
+        print "problem"
+        flag = 1
+if (flag == 0):
+    print "no problem"
+    

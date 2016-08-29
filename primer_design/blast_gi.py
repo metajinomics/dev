@@ -13,9 +13,9 @@ for line in open(sys.argv[1],'r'):
         fwrite.write("gene"+str(i)+gen+'\t'+spl[0]+'\n')
         file = open("gene"+str(i)+gen+'.txt','w')
         if (int(spl[8]) < int(spl[9])):
-            file.write(ids+'\t'+spl[8]+'-'+spl[9]+'\n')
+            file.write(ids+'\t'+spl[8]+'-'+spl[9]+'\t'+'plus'+'\n')
         cid = spl[0]
         i += 1
     else:
         if (int(spl[8]) < int(spl[9])):
-            file.write(ids+'\t'+spl[8]+'-'+spl[9]+'\n')
+            file.write(ids+'\t'+spl[8]+'-'+spl[9]+'\t'+'plus'+'\n')

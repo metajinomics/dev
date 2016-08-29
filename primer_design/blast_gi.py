@@ -7,7 +7,7 @@ i = 1
 for line in open(sys.argv[1],'r'):
     spl = line.strip().split('\t')
     gens = spl[0].split('|')
-    gen = gens[len(gens)]
+    gen = gens[len(gens)-1]
     ids = spl[1].split('|')[1]
     if not(cid == spl[0]):
         fwrite.write("gene"+str(i)+gen+'\t'+spl[0]+'\n')

@@ -14,8 +14,12 @@ for line in open(sys.argv[1],'r'):
         file = open("gene"+str(i)+gen+'.txt','w')
         if (int(spl[8]) < int(spl[9])):
             file.write(ids+'\t'+spl[8]+'-'+spl[9]+'\t'+'plus'+'\n')
+        else:
+            file.write(ids+'\t'+spl[9]+'-'+spl[8]+'\t'+'minus'+'\n')
         cid = spl[0]
         i += 1
     else:
         if (int(spl[8]) < int(spl[9])):
             file.write(ids+'\t'+spl[8]+'-'+spl[9]+'\t'+'plus'+'\n')
+        else:
+            file.write(ids+'\t'+spl[9]+'-'+spl[8]+'\t'+'minus'+'\n')

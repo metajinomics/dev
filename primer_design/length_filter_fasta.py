@@ -21,6 +21,7 @@ def main():
             flag = 1
         elif(line.strip()[:1] == ">" and flag == 1):
             check_length(name,seqs,cu)
+            name = line.strip()
             seqs = []
         else:
             seqs.append(line.strip())

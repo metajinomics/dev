@@ -13,5 +13,5 @@ for line in open(sys.argv[2],'r'):
             dict[x[0]] += 1
 
 for x in dict.items():
-    if(x[1] >0 ):
+    if(x[1] == 0 ):
         print x[0]

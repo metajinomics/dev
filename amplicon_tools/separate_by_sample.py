@@ -47,8 +47,8 @@ def main():
     inforead.close()
 
     #step2: read barcode file
-    if (sys.argv[1][-2:] == 'gz'):
-        barread = gzip.open(sys.argv[1],'r')
+    if (sys.argv[2][-2:] == 'gz'):
+        barread = gzip.open(sys.argv[2],'r')
     else:
         barread = open(sys.argv[2],'r')
     seq  = [] 
@@ -63,7 +63,7 @@ def main():
     barread.close()
     
     #step3: read raw-read file
-    if (sys.argv[1][-2:] == 'gz'):
+    if (sys.argv[3][-2:] == 'gz'):
         seqread = gzip.open(sys.argv[3],'r')
     else:
         seqread = open(sys.argv[3],'r')

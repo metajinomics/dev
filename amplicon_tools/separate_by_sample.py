@@ -4,6 +4,7 @@
 import sys
 from string import maketrans
 import os
+import gzip
 
 def add_seq(seq,ids,result):
     if( ids.has_key(seq[0].split(' ')[0])):
@@ -46,7 +47,10 @@ def main():
     inforead.close()
 
     #step2: read barcode file
-    barread = open(sys.argv[2],'r')
+    if (sys.argv[1][-2:] == 'gz'):
+        barread = gzip.open(sys.argv[1],'r')
+    else:
+        barread = open(sys.argv[2],'r')
     seq  = [] 
     ids = {}
     for n,line in enumerate(barread):
@@ -59,7 +63,10 @@ def main():
     barread.close()
     
     #step3: read raw-read file
-    seqread = open(sys.argv[3],'r')
+    if (sys.argv[1][-2:] == 'gz'):
+        seqread = gzip.open(sys.argv[3],'r')
+    else:
+        seqread = open(sys.argv[3],'r')
     seq = []
     result = {}
     for n,line in enumerate(seqread):

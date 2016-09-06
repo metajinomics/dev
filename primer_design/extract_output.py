@@ -39,5 +39,10 @@ for line in con:
             iter =  int(prev.split(' ')[0])
             get_primers(i,con,iter,fname,rc)
             break
+    #if no result until 20 primers then print 20 primers 
+    elif (line[:15] == '20 Primer Pair:'):
+        iter = 20
+        i += 1
+        get_primers(i,con,iter,fname,rc)
     prev = line.strip()
     i += 1

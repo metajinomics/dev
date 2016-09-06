@@ -44,5 +44,6 @@ for line in con:
         iter = 20
         i += 1
         get_primers(i,con,iter,fname,rc)
+        break
     prev = line.strip()
     i += 1

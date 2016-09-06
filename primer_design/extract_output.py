@@ -20,7 +20,9 @@ def get_primers(i,con,iter,fname,rc):
             print ">R:"+fname.split('.')[0]+'_'+str(k)
             print revrc
             k += 1
-    
+        elif(line == ""):
+            break
+
 cut = float(sys.argv[2])/100
 prev = ""
 fread = open(sys.argv[1])

@@ -19,3 +19,6 @@ java get_each_gene_fasta.java assembly 350.faa output.fna
 ## add annotation ec number and taxonomy
 At this point, I expect you have tree files, normal_counts.txt, mgmxxxx_function_KEGG.tab, mgmxxxx_organism_KEGG.tab .
 
+~~~
+python add_anno.py normal_counts.txt mgm4675652.3_organism_KEGG_nopipe.tab mgm4675652.3_function_KEGG_nopipe.tab new_big_table.txt
+~~~

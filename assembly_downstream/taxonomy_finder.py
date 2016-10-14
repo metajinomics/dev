@@ -114,5 +114,6 @@ def from_id(taxid):
     taxon = taxid
     flist = get_taxonomy(locus,taxon)
     for item in flist:
-        full_tax = full_tax + item+'\t'
+        full_tax = full_tax + item+';'
+        #full_tax = full_tax + item+'\t'
     return full_tax

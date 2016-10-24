@@ -31,19 +31,25 @@ def main():
             for i in range(0, len(se)-len(f)):
                 str1 = se[i:len(f)+i]
                 if mismatch(str1,f,mis):
-                    print ">F:",f, i
+                    output = ">F:\n"+f+'\n'
+                    #print ">F:",f, i
                     for r in rpri:
-                        #print r
-                        #rp = reverse_complement.get_rc(r)
+                        
+                        
                         rp = r
-                        #print rp
+                        
                         for j in range(0, len(se)-len(rp)):
                             str2 = se[j:len(rp)+j]
-                            #print str2
-                            #print rp
+                            
+                            
                             if mismatch(str2,rp,mis):
                                 frp = reverse_complement.get_rc(rp)
-                                print ">R:",frp,j+len(rp), j+len(rp)-i
+                                
+                                #print ">R:",frp,j+len(rp), j+len(rp)-i
+                                flen = j+len(rp)-i
+                                if(flen >250 and flen<320):
+                                    output = output + ">R:\n"+frp+'\n'
+                                    print output
 
 if __name__ == '__main__':
     main()

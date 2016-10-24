@@ -42,7 +42,7 @@ def main():
                                 #print ">R:",frp,j+len(rp), j+len(rp)-i
                                 flen = j+len(rp)-i
                                 if(flen >250 and flen<320):
-                                    output = output + ">R:"+lfile+"_"+str(num)+"\n"+frp
+                                    output = output + ">R:"+lfile+"_"+str(num)+"\n"+frp+'\n'
                                     print output
 
 if __name__ == '__main__':

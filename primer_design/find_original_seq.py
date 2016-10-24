@@ -1,6 +1,6 @@
 
 #find original seq using arg name
-#python find_original_seq.py /Users/jinchoi/Box\ Sync/2016/9September/mock/three_genome/arg_list_three_org.uniq.txt /Users/jinchoi/Box\ Sync/2016/9September/mock/three_genome/usda_arg.fa > tet38.fa
+#python find_original_seq.py list_arg.txt arg_list_three_org.uniq.txt usda.nu.fna 
 
 import sys
 
@@ -12,10 +12,10 @@ def find_seq(locus, file):
             spl = line[1:].strip().split(' ')
             if spl[0] == locus:
                 flag = 1
-                print line.strip()
+                seq =  line.strip()+'\n'
                 continue
         if(flag == 1):
-            print line.strip()
+            seq = seq+ line.strip()
             flag = 0
             
     return seq
@@ -30,8 +30,13 @@ def find_locus(name, file):
 
 def main():
     name = sys.argv[1]
-    locus = find_locus(name, sys.argv[2])
-    seq = find_seq(locus, sys.argv[3])
+    for x in open(name,'r'):
+        gene = x.strip()
+        locus = find_locus(gene, sys.argv[2])
+        seq = find_seq(locus, sys.argv[3])
+        fwrite = open(gene+'.fa','w')
+        fwrite.write(seq)
+        fwrite.close()
 
 if __name__ == '__main__':
     main()

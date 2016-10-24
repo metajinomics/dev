@@ -31,7 +31,7 @@ def main():
             for i in range(0, len(se)-len(f)):
                 str1 = se[i:len(f)+i]
                 if mismatch(str1,f,mis):
-                    output = ">F:"+lfile+"_"i+"\n"+f+'\n'
+                    output = ">F:"+lfile+"_"+i+"\n"+f+'\n'
                     #print ">F:",f, i
                     for r in rpri:
                         rp = r

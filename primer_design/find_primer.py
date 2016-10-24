@@ -20,15 +20,18 @@ def main():
     mis = 0
     #read primer
     fpri, rpri = utils.read_trad_primer(sys.argv[1])
+    lfile = sys.argv[2]
+    i = 0
     seq = utils.read_fasta(sys.argv[2])
     for item in seq.items():
+        i += 1
         se = item[1]
         for f in fpri:
             #print f
             for i in range(0, len(se)-len(f)):
                 str1 = se[i:len(f)+i]
                 if mismatch(str1,f,mis):
-                    output = ">F:\n"+f+'\n'
+                    output = ">F:"+lfile+"_"i+"\n"+f+'\n'
                     #print ">F:",f, i
                     for r in rpri:
                         rp = r

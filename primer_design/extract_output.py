@@ -1,8 +1,7 @@
 #extract output from primer design 
 #python extract_output.py input > output
-
+#this output make primer for convential qPCR primer (NOT Truseq)
 import sys
-
 
 def main():
     num = 0
@@ -20,7 +19,7 @@ def main():
                     if( i == 0):
                         print ">F:"+file+"_"+str(num)+"_"+str(snum)
                     else:
-                        print ">R:"+file+"+"+str(num)+"_"+str(snum)
+                        print ">R:"+file+"_"+str(num)+"_"+str(snum)
                     print oneoli[0]
 
 if __name__ == '__main__':

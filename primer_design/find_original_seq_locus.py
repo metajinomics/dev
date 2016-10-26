@@ -15,7 +15,7 @@ def find_seq(locus, file):
                 seq =  line.strip()+'\n'
                 continue
         if(flag == 1):
-            seq = seq+ line.strip()
+            seq = seq+ line.strip()+'\n'
             flag = 0
             
     return seq

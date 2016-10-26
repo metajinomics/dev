@@ -26,22 +26,27 @@ def main():
     for item in seq.items():
         se = item[1]
         for f in fpri:
-            #print f
             for i in range(0, len(se)-len(f)):
                 str1 = se[i:len(f)+i]
+                #print str1, f
+                #print mismatch(str1,f,mis)
                 if mismatch(str1,f,mis):
+                    #print "match"
                     num += 1
                     output = ">F:"+lfile+"_"+str(num)+"\n"+f+'\n'
+                    #print output
                     #print ">F:",f, i
                     for r in rpri:
                         rp = r
                         for j in range(0, len(se)-len(rp)):
                             str2 = se[j:len(rp)+j]
                             if mismatch(str2,rp,mis):
+                                #print "match"
                                 frp = reverse_complement.get_rc(rp)
                                 #print ">R:",frp,j+len(rp), j+len(rp)-i
                                 flen = j+len(rp)-i
-                                if(flen >250 and flen<320):
+                                #print flen
+                                if(flen >220 and flen<340):
                                     output = output + ">R:"+lfile+"_"+str(num)+"\n"+frp+'\n'
                                     print output
 

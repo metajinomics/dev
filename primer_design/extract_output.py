@@ -6,7 +6,8 @@ import sys
 
 def main():
     num = 0
-    for line in open(sys.argv[1],'r'):
+    file = sys.argv[1]
+    for line in open(file,'r'):
         if line[:13] == "Primer Pair: " :
             num += 1
             spl = line.strip().split("revOligo")
@@ -17,9 +18,9 @@ def main():
                     snum += 1
                     oneoli = oli[j].split("}")
                     if( i == 0):
-                        print ">F:"+str(num)+"_"+str(snum)
+                        print ">F:"+file+str(num)+"_"+str(snum)
                     else:
-                        print ">R:"+str(num)+"_"+str(snum)
+                        print ">R:"+file+str(num)+"_"+str(snum)
                     print oneoli[0]
 
 if __name__ == '__main__':

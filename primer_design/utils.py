@@ -5,6 +5,8 @@ def read_trad_primer(filename):
     rpri = []
     flag = 0
     for line in open(filename,'r'):
+        if(line.strip() == ""):
+            continue
         if(line[:2] == ">F"):
             flag = 0
         elif(line[:2] == ">R"):

@@ -18,9 +18,9 @@ def main():
                     snum += 1
                     oneoli = oli[j].split("}")
                     if( i == 0):
-                        print ">F:"+file+str(num)+"_"+str(snum)
+                        print ">F:"+file+"_"+str(num)+"_"+str(snum)
                     else:
-                        print ">R:"+file+str(num)+"_"+str(snum)
+                        print ">R:"+file+"+"+str(num)+"_"+str(snum)
                     print oneoli[0]
 
 if __name__ == '__main__':

@@ -136,7 +136,7 @@ def find_lease_primer_one_gene(g1,faseq,primer,genename):
     rp = primer[g1][1]
     seq = faseq[g1]
     seq_primers = final_primer(shared_f, shared_r, fp, rp, seq)
-    result = [genename, g1, seq_primers[0], seq_primers[1]]
+    result = [genename, g1, seq_primers[0], seq_primers[1], str(seq_primers[2])]
     print '\t'.join(result)
 
 def main():

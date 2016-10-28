@@ -16,7 +16,7 @@ def mismatch(str1, str2, alow):
     return True
 
 def main():
-    min = 210
+    min = 200
     max = 370
     #parameters that used
     mis = 0

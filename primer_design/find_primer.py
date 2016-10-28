@@ -16,6 +16,8 @@ def mismatch(str1, str2, alow):
     return True
 
 def main():
+    min = 210
+    max = 370
     #parameters that used
     mis = 0
     #read primer
@@ -46,7 +48,7 @@ def main():
                                 #print ">R:",frp,j+len(rp), j+len(rp)-i
                                 flen = j+len(rp)-i
                                 #print flen
-                                if(flen >220 and flen<340):
+                                if(flen >min and flen<max):
                                     output = output + ">R:"+lfile+"_"+str(num)+"\n"+frp+'\n'
                                     print output
 

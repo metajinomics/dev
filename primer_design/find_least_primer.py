@@ -118,8 +118,8 @@ def find_least_primer_two_gene(g1,g2,faseq,primer,genename):
 
     seq1_primers = final_primer(shared_f, shared_r, fp, rp, seq1)
     seq2_primers = final_primer(shared_f, shared_r, fp2, rp2, seq2)
-    result1 = [genename, g1,seq1_primers[0], seq1_primers[1], seq1_primers[2]]
-    result2 = [genename, g2,seq2_primers[0], seq2_primers[1], seq2_primers[2]]
+    result1 = [genename, g1,seq1_primers[0], seq1_primers[1], str(seq1_primers[2])]
+    result2 = [genename, g2,seq2_primers[0], seq2_primers[1], str(seq2_primers[2])]
 
 #    if(genename == "H-NS"):
 #        print shared_f, shared_r, fp, rp, seq1

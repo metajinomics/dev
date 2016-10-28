@@ -68,7 +68,7 @@ def find_share(fp,rp,seq1,seq2):
 def final_primer(shared_f, shared_r, fp, rp, seq):
     primers = ["",""]
     rcandi = {}
-    minl = 220
+    minl = 210
     maxl = 370
 #    print len(shared_f)
     if (len(shared_f) > 0):

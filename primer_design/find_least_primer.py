@@ -9,10 +9,11 @@ import utils
 def merge(shared_f_from_p1, shared_r_from_p1,shared_f_from_p2, shared_r_from_p2):
     shared_f = {}
     shared_r = {}
-    for item in shared_f_from_p1.items():
-        shared_f[item[0]] = item[1]
-    for item in shared_f_from_p2.items():
-        shared_f[item[0]] = item[1]
+    if(len(shared_f_from_p1) > 0 and len(shared_f_from_p2)>0):
+        for item in shared_f_from_p1.items():
+            shared_f[item[0]] = item[1]
+        for item in shared_f_from_p2.items():
+            shared_f[item[0]] = item[1]
 
     for item in shared_r_from_p1.items():
         shared_r[item[0]] = item[1]
@@ -71,6 +72,9 @@ def final_primer(shared_f, shared_r, fp, rp, seq):
     maxl = 370
 #    print len(shared_f)
     if (len(shared_f) > 0):
+        #print shared_f
+        #print "this is shared"
+        #print shared_f
         for item in shared_f.items():
             start =  seq.find(item[0])
             for x in rp:
@@ -111,7 +115,7 @@ def find_least_primer_two_gene(g1,g2,faseq,primer,genename):
     shared_f_from_p1, shared_r_from_p1 = find_share(fp,rp,seq1,seq2)
     shared_f_from_p2, shared_r_from_p2 = find_share(fp2,rp2,seq1,seq2)
     shared_f, shared_r = merge(shared_f_from_p1, shared_r_from_p1,shared_f_from_p2, shared_r_from_p2)
-    
+
     seq1_primers = final_primer(shared_f, shared_r, fp, rp, seq1)
     seq2_primers = final_primer(shared_f, shared_r, fp2, rp2, seq2)
     result1 = [genename, g1,seq1_primers[0], seq1_primers[1]]

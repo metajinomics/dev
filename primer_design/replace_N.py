@@ -9,4 +9,5 @@ for line in open(sys.argv[1],'r'):
         print line.strip()
     else:
         newline = line.strip().replace("N", "-")
+        newline = newline.replace('n','-')
         print newline

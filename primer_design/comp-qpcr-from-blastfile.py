@@ -19,7 +19,8 @@ for x in d.keys():
     #print sorted(d[x])
     d2  = {}
     for y in d[x]:
-        y = y.split('_')[0]
+        y = y.split(':')[1]
+        #y = y.split('_')[0]
         d2[y] = d2.get(y,0) + 1
     for x2 in d2:
         if x2 != "1":

@@ -13,7 +13,7 @@ for line in fread:
     if line[:1]==">":
         flag = 0
         seq.append(line.strip())
-        if dict.has_key(line.split(' ')[0][1:]):
+        if dict.has_key(line.strip().split(' ')[0][1:]):
             flag = 1
     if flag == 1:
         print line.strip()

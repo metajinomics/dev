@@ -4,10 +4,12 @@
 
 import sys
 
-def print_res(seqs):
+def print_res(seqs, query, dict):
     fseq = ''.join(seqs)
-    result = [len(fseq)]
-    print result
+    left = dict[query][0]
+    right = dict[query][1]
+    result = [query,len(fseq), left, right]
+    print '\t'.join(result)
 
 def check_presence(query, dict):
     flag = 0
@@ -28,12 +30,12 @@ for line in open(sys.argv[2],'r'):
         query = line.strip()[1:]
         flag = check_presence(query, dict)
     elif line[:1] == ">" and flag == 1:
-        print_res(seqs)
+        print_res(seqs, query, dict)
         query = line.strip()[1:]
         flag = check_presence(query,dict)
     else:
         if flag == 1:
             seqs.append(line.strip())
 
-print_res(seqs)
+print_res(seqs, query, dict)
             

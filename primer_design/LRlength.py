@@ -31,6 +31,7 @@ for line in open(sys.argv[2],'r'):
         flag = check_presence(query, dict)
     elif line[:1] == ">" and flag == 1:
         print_res(seqs, query, dict)
+        seqs = []
         query = line.strip()[1:]
         flag = check_presence(query,dict)
     else:

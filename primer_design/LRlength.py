@@ -38,5 +38,6 @@ for line in open(sys.argv[2],'r'):
         if flag == 1:
             seqs.append(line.strip())
 
-print_res(seqs, query, dict)
+if flag == 1:
+    print_res(seqs, query, dict)
             

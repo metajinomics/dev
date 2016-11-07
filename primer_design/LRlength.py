@@ -8,7 +8,7 @@ def print_res(seqs, query, dict):
     fseq = ''.join(seqs)
     left = dict[query][0]
     right = dict[query][1]
-    result = [query,len(fseq), left, right]
+    result = [query,len(fseq), str(left), str(right)]
     print '\t'.join(result)
 
 def check_presence(query, dict):

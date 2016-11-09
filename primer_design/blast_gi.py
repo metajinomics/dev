@@ -1,7 +1,7 @@
 #this script generate splited gi file from blast output
 #python blast_gi.py blast.output > gi.txt
 import sys
-fwrite = open('map_file.txt','w')
+#fwrite = open('map_file.txt','w')
 cid = ""
 i = 1
 for line in open(sys.argv[1],'r'):
@@ -10,8 +10,8 @@ for line in open(sys.argv[1],'r'):
     gen = gens[len(gens)-1]
     ids = spl[1].split('|')[1]
     if not(cid == spl[0]):
-        fwrite.write("gene"+str(i)+gen+'\t'+spl[0]+'\n')
-        file = open("gene"+str(i)+gen+'.txt','w')
+        #fwrite.write("gene"+str(i)+gen+'\t'+spl[0]+'\n')
+        file = open(gen+'.txt','w')
         if (int(spl[8]) < int(spl[9])):
             file.write(ids+'\t'+spl[8]+'-'+spl[9]+'\t'+'plus'+'\n')
         else:

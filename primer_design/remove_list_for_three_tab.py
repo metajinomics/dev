@@ -11,5 +11,5 @@ for line in open(sys.argv[2],'r'):
 
 for line in open(sys.argv[1],'r'):
     spl = line.strip().split('\t')
-    if not d.has_key(spl[2]):
+    if not d.has_key(spl[1]):
         print line.strip()

@@ -24,9 +24,11 @@ def main():
                     oneoli = oli[j].split("}")
                     if( i == 0):
                         print ">F:"+file+"_"+str(num)+"_"+str(snum)
+                        print oneoli[0]
                         prim['f'].append(oneoli[0])
                     else:
                         print ">R:"+file+"_"+str(num)+"_"+str(snum)
+                        print oneoli[0]
                         prim['r'].append(oneoli[0])
                     #print oneoli[0]
             #print prim

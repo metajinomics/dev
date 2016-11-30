@@ -1,4 +1,9 @@
+#!/usr/bin/python
 
+# this script print primers in fasta format from output file of PrimerDesign
+# usage: python get_fasta_from_design.py output.design > output.fasta
+# make truseq form of primer???? -> need to check
+ 
 import sys
 import reverse_complement
 tru = 1

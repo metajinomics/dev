@@ -21,7 +21,11 @@ for line in open(sys.argv[2],'r'):
         cluster[clu].append(id)
         star  = line.strip().split('>')[1].split('... ')[1]
         if star == "*":
-            clu_id[clu] = id
+            name = ""
+            for x in fasta.items():
+                if id in x[0]:
+                    name = x[0]
+            clu_id[clu] = name[1:]
 
 for item in cluster.items():
     file = clu_id[item[0]]+'.clustered.fa'

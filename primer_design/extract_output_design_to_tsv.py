@@ -30,7 +30,16 @@ def main():
                         rpri = "_"
                     else:
                         rpri = r[i]
-                    print "%s\t%s\t%s\t%s" %(file,set,f[i],rpri)
+                    print "%s\t%s\t%s\t%s" %(file.split('.')[0],set,f[i],rpri)
+            else:
+                for i in range(0,len(r)):
+                    fpri = ""
+                    set = str(num)+"_"+str(i+1)
+                    if(i+1 > len(f)):
+                        fpri = "_"
+                    else:
+                        fpri = f[i]
+                    print "%s\t%s\t%s\t%s" %(file.split('.')[0],set,fpri,r[i])
 
 if __name__ == '__main__':
     main()

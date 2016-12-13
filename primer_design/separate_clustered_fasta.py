@@ -25,7 +25,7 @@ for line in open(sys.argv[2],'r'):
             for x in fasta.items():
                 if id in x[0]:
                     name = x[0]
-            clu_id[clu] = name[1:]
+            clu_id[clu] = name.split(' ')[0][1:]
 
 for item in cluster.items():
     file = clu_id[item[0]]+'.clustered.fa'

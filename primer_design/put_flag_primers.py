@@ -21,12 +21,15 @@ def put_flag(d, primer,flag):
 def main():
     d = {}
     for line in open(sys.argv[1],'r'):
+        if not line[:1] == ">":
+            continue
         spl =  line.strip().split(' ')
-        length = int(spl[5])
-        fpri = spl[1]
-        rpri = spl[3]
+        la = len(spl)
+        length = int(spl[la-1])
+        fpri = spl[la-5]
+        rpri = spl[la-3]
         flag = 0
-        if length > 200 and length < 300:
+        if length > 180 and length < 300:
             flag = 1
             put_flag(d,fpri,flag)
             put_flag(d,rpri,flag)
@@ -36,7 +39,7 @@ def main():
             put_flag(d,rpri,flag)
 
     for item in d.items():
-        print item[0],item[1]
+        print item[0],item[1].get("good",0),item[1].get("bad",0)
 
 if __name__ == "__main__":
     main()

@@ -8,4 +8,4 @@ for line in open(sys.argv[1],'r'):
 
     tax = taxonomy_finder.get_taxonomy(spl[2])
     #print tax
-    #print spl[0]+'\t'+ '\t'.join(tax)
+    print spl[0]+'\t'+ '\t'.join(tax)

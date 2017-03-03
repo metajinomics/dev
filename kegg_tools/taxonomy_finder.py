@@ -120,7 +120,7 @@ def get_taxonomy(tax_id):
         St = line[startS:endS]
         flist.append(line[startS:endS])
     flist = [Kt,Pt,Ct,Ot,Ft,Gt,St]
-    print flist
+    #print flist
     return flist
 
 def full(filename):

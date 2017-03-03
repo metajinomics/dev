@@ -133,7 +133,8 @@ def get_taxonomy(tax_id):
             flist.append(line[startS:endS])
     else:
         startS = line.find("Taxonomy browser")
-        endS = line.find(")</title>")
+        startS = startS + 18
+        endS = line.find(")</title>", startS)
         #print startS,endS
         St = line[startS:endS]
         flist.append(line[startS:endS])

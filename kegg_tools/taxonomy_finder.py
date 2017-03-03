@@ -42,66 +42,84 @@ def get_taxonomy(tax_id):
     St = ""
 
     startK = line.find("TITLE=\"superkingdom\">")
-    startK = startK + 21
-    endK = line.find("</a", startK) 
+    if startK > 0:
+        startK = startK + 21
+        endK = line.find("</a", startK) 
     #print startK, endK
     
-    if (endK == lenCut):
-        Kt = "null"
-        flist.append("null")
+        if (endK == lenCut):
+            Kt = "null"
+            flist.append("null")
+        else:
+            Kt = line[startK:endK]
+            flist.append(line[startK:endK])
     else:
-        Kt = line[startK:endK]
-        flist.append(line[startK:endK])
+        Kt = "null"
 
     startP = line.find("TITLE=\"phylum\">")
-    startP = startP + 15
-    endP = line.find("</a", startP) 
-    if (endP == lenCut):
-        Pt = "null"
-        flist.append("null")
+    if startP > 0:
+        startP = startP + 15
+        endP = line.find("</a", startP) 
+        if (endP == lenCut):
+            Pt = "null"
+            flist.append("null")
+        else:
+            Pt = line[startP:endP]
+            flist.append(line[startP:endP])
     else:
-        Pt = line[startP:endP]
-        flist.append(line[startP:endP])
+        Pt = "null"
 
     startC = line.find("TITLE=\"class\">")
-    startC = startC + 14
-    endC = line.find("</a", startC)
-    if (endC == lenCut):
-        Ct = "null"
-        flist.append("null")
+    if startC > 0:
+        startC = startC + 14
+        endC = line.find("</a", startC)
+        if (endC == lenCut):
+            Ct = "null"
+            flist.append("null")
+        else:
+            Ct = line[startC:endC]
+            flist.append(line[startC:endC])
     else:
-        Ct = line[startC:endC]
-        flist.append(line[startC:endC])
+        Ct = "null"
     
     startO = line.find("TITLE=\"order\">")
-    startO = startO + 14
-    endO = line.find("</a", startO)
-    if (endO == lenCut):
-        Ot = "null"
-        flist.append("null")
+    if startO > 0:
+        startO = startO + 14
+        endO = line.find("</a", startO)
+        if (endO == lenCut):
+            Ot = "null"
+            flist.append("null")
+        else:
+            Ot = line[startO:endO]
+            flist.append(line[startO:endO])
     else:
-        Ot = line[startO:endO]
-        flist.append(line[startO:endO])
+        Ot = "null"
 
     startF = line.find("TITLE=\"family\">")
-    startF = startF + 15
-    endF = line.find("</a", startF)
-    if (endF == lenCut):
-        Ft = "null"
-        flist.append("null")
+    if startF > 0:
+        startF = startF + 15
+        endF = line.find("</a", startF)
+        if (endF == lenCut):
+            Ft = "null"
+            flist.append("null")
+        else:
+            Ft = line[startF:endF]
+            flist.append(line[startF:endF])
     else:
-        Ft = line[startF:endF]
-        flist.append(line[startF:endF])
+        startF = "null"
 
     startG = line.find("TITLE=\"genus\">")
-    startG = startG + 14
-    endG = line.find("</a", startG)
-    if (endG == lenCut):
-        Gt = "null"
-        flist.append("null")
+    if startG > 0:
+        startG = startG + 14
+        endG = line.find("</a", startG)
+        if (endG == lenCut):
+            Gt = "null"
+            flist.append("null")
+        else:
+            Gt = line[startG:endG]
+            flist.append(line[startG:endG])
     else:
-        Gt = line[startG:endG]
-        flist.append(line[startG:endG])
+        Gt = "null"
 
     startS = line.find("TITLE=\"species\">")
     if startS > 0 :

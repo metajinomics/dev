@@ -11,3 +11,4 @@ for line in open(sys.argv[1],'r'):
         tax = ["null","null","null","null","null","null","null"]
     #print tax
     print spl[0]+'\t'+ '\t'.join(tax)
+    time.sleep(1.0/3)

@@ -1,8 +1,9 @@
-
+#!/usr/bin/python
+#this script get full taxonomy from NCBI
 
 import sys
 import taxonomy_finder
-
+import time
 for line in open(sys.argv[1],'r'):
     spl = line.strip().split('\t')
     if len(spl) > 2:

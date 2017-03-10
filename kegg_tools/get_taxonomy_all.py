@@ -11,7 +11,7 @@ for line in open(sys.argv[1],'r'):
         continue
     spl = line.strip().split('\t')
     if len(spl) > 2:
-        tax = taxonomy_finder.get_taxonomy(spl[2])
+        tax = taxonomy_finder.get_taxonomy(spl[1])
     else:
         tax = ["null","null","null","null","null","null","null"]
     #print tax

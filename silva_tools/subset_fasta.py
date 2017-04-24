@@ -12,6 +12,6 @@ for line in open(sys.argv[1],'r'):
             
     else: 
         if flag == 1:
-            print line,
+            print line.strip().replace("U","T")
     
         

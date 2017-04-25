@@ -22,4 +22,4 @@ for line in open(sys.argv[2],'r'):
         result.append(d[spl[1]])
     else:
         result.append("unassigned")
-
+    print '\t'.join(result)

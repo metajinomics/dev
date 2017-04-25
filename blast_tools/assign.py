@@ -16,7 +16,7 @@ for line in open(sys.argv[2],'r'):
     spl = line.strip().split('\t')
     sco = float(spl[2])
     result = []
-    for i in range(0,2):
+    for i in range(0,3):
         result.append(spl[i])
     if sco > cut:
         result.append(d[spl[1]])

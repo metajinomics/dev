@@ -10,7 +10,7 @@ cut = float(sys.argv[3])
 for line in open(sys.argv[1],'r'):
     if line[:1] == ">":
         spl = line[1:].strip().split(' ')
-        d[spl[0]] = spl[1]
+        d[spl[0]] = line.strip()[1:]
 
 for line in open(sys.argv[2],'r'):
     spl = line.strip().split('\t')

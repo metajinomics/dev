@@ -6,7 +6,7 @@ flag = 0
 for line in open(sys.argv[1],'r'):
     if line[:1] == ">":
         flag = 0
-        if sys.argv[2] in line and "uncultured" not in line:
+        if not "uncultured" in line:
             print line,
             flag = 1
             

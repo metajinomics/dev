@@ -15,7 +15,8 @@ def main():
             else:
                 count[spl[0]] = [spl[1]]
     for ids in list_id:
-        print ids+'\t'+'\t'.join(count[ids])
+        result = [ids] + count[ids]
+        print '\t'.join(result)
 
 
 if __name__ == '__main__':

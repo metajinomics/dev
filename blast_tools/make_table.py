@@ -34,7 +34,7 @@ def main():
     print '\t'.join(all_files)
     for item in gene_name.items():
         result = []
-        for n,file in all_files:
+        for n,file in enumerate(all_files):
             if n == 0:
                 result.append(item[0])
                 continue

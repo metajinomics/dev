@@ -25,7 +25,7 @@ def main():
         for line in open(each_file,'r'):
             spl = line.strip().split('\t')
             name = spl[1].replace('|','.')
-            if gene_name.has_key(name):
+            if gene_name[name].has_key(file_name):
                 gene_name[name][file_name] += 1
             else:
                 gene_name[name][file_name] = 1

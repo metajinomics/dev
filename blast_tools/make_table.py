@@ -29,7 +29,7 @@ def main():
                 gene_name[name][file_name] += 1
             else:
                 gene_name[name][file_name] = 1
-    print gene_name
+    
     #print result
     print '\t'.join(all_files)
     for item in gene_name.items():
@@ -42,7 +42,7 @@ def main():
                 result.append(str(item[1][file]))
             else:
                 result.append("0")
-        #print '\t'.join(result)
+        print '\t'.join(result)
             
 
 if __name__ == '__main__':

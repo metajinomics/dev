@@ -19,7 +19,8 @@ def main():
                 if (x == "translation"):
                     ids = [">",record.qualifiers["locus_tag"][0]]
                     gene_name = "".join(ids)
-                    genome = gb_file.split('.')[0].split('/')[1]
                     print '\t'.join([genome_name,gene_name[1:]])
+
+
 if __name__ == '__main__':
     main()

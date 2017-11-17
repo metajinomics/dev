@@ -12,8 +12,8 @@ def main():
     db = {}
     fasta_file = sys.argv[1]
     for record in screed.open(fasta_file):
-        db[record.name] = len(record.sequence)
-    print db
+        db[record.name.split(' ')[0]] = len(record.sequence)
+
     blast_file = sys.argv[2]
     iden_filter = float(sys.argv[3])
     len_filter = float(sys.argv[4])

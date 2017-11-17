@@ -25,7 +25,7 @@ def main():
             continue
 
         if not prev == spl[0]:
-            percent = (int(spl[3]) / db[spl[0]]) * 100
+            percent = (int(spl[3]) / db[spl[1]]) * 100
             if float(spl[2]) > idenfilter and percent > len_filter:  
                 print line,
             prev = spl[0]

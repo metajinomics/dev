@@ -18,7 +18,7 @@ def main():
         spl = line.strip().split('\t')
         blaf[spl[0]] = 0
     
-    for line in opne(blastr,'r'):
+    for line in open(blastr,'r'):
         spl = line.strip().split('\t')
         blar[spl[0]] = 0
 

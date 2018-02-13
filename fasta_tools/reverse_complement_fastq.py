@@ -24,6 +24,7 @@ def main():
             continue
         elif n%4 == 3:
             print line.strip()[::-1]
+            continue
         print line,
 
 

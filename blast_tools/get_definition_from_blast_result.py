@@ -21,6 +21,6 @@ for id_line in open(sys.argv[1]):
     spl = re.split('\n')
     for line in spl:
         if "DEFINITION" in line:
-            print id_line+'\t'+line.strip().split('  ')[1]
+            print id_line.strip()+'\t'+line.strip().split('  ')[1]
 
     time.sleep(1.0/3)

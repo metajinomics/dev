@@ -16,15 +16,15 @@ def main():
     num_sets = num_lines/4
     ran = random.sample(range(0,num_sets),even_num)
 
-    ran4 = []
+    ran4 = {}
     for x in ran:
-        ran4.append(x*4+3)
+        ran4[x*4+3] = 0
 
     temp = []
     for n, line in enumerate(open(sys.argv[1],'r')):
         if n % 4 == 3:
             temp.append(line)
-            if n in ran4:
+            if ran4.has_key(n):
                 print ''.join(temp),
             temp = []
         else:

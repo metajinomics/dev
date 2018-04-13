@@ -19,10 +19,10 @@ def main():
     num_sets = num_lines/4
     ran = random.sample(range(0,num_sets),even_num)
 
-    ran4 = []
+    ran4 = {}
     for x in ran:
-        ran4.append(x*4+3)
-
+        ran4[x*4+3] = 0
+ 
 
     r1temp = []
     r2temp = []
@@ -30,7 +30,7 @@ def main():
         if n % 4 == 3:
             r1temp.append(r1line)
             r2temp.append(r2.readline())
-            if n in ran4:
+            if ran4.has_key(n):
                 r1write.write(''.join(r1temp))
                 r2write.write(''.join(r2temp))
             r1temp = []

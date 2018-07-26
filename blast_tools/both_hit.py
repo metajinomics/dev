@@ -12,13 +12,14 @@ def main():
     R2 = {}
     for line in open(sys.argv[2],'r'):
         spl = line.strip().split('\t')
-        R2[spl[0]] = 0
+        R2[spl[0]] = spl[1]
 
     #compare R1 then make output
     for line in open(sys.argv[1],'r'):
         spl = line.strip().split('\t')
         if R2.has_key(spl[0]):
-            print line,
+            if spl[1] == R2[spl[0]]:
+                print line,
 
 if __name__ == '__main__':
     main()

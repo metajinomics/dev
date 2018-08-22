@@ -15,8 +15,10 @@ def main():
     r2write = open(sys.argv[2]+'.'+str(even_num)+'.fastq','w')
 
     num_lines =sum(1 for line in open(sys.argv[1],'r'))
-
+    
     num_sets = num_lines/4
+    if num_sets < even_num:
+        sys.exit(0)
     ran = random.sample(range(0,num_sets),even_num)
 
     ran4 = {}

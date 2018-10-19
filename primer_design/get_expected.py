@@ -78,10 +78,20 @@ def main():
                 for j in range(1,len(oli)):
                     snum += 1
                     oneoli = oli[j].split("}")
+                    cnu = str(num)
+                    pnu = str(snum)
+                    if len(cnu) == 1:
+                        cnu = "00"+cnu
+                    elif len(cnu) == 2:
+                        cnu = "0" + cnu
+
+                    if len(pnu) == 1:
+                        pnu = "0"+pnu
+
                     if( i == 0):
-                        prim["F:"+file+"_"+str(num)+"_"+str(snum)]= oneoli[0]
+                        prim["F:"+file+".C"+cnu+"."+pnu+"F"]= oneoli[0]
                     else:
-                        prim["R:"+file+"_"+str(num)+"_"+str(snum)]= oneoli[0]
+                        prim["R:"+file+".C"+cnu+"."+pnu+"R"]= oneoli[0]
         elif line[:10] == "----------":
             if flag == 1:
                 print_pcr_product(prim, seq_list, fasta)

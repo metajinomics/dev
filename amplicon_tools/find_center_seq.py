@@ -54,6 +54,7 @@ def main():
     name = {}
     for n,line in enumerate(open(sys.argv[1],'r')):
         if n == 0:
+            print line,
             continue
         spl = line.strip().split('\t')
         #value = spl[1:len(spl)]
@@ -61,6 +62,8 @@ def main():
         #for x in value:
         #    fvalue.append(float(x))
         name[spl[0]] = n-1
+        if n % 10000 == 0:
+            print n
         #dist[spl[0]] = fvalue
 
     #read list

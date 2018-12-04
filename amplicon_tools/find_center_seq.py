@@ -50,18 +50,18 @@ def get_represent_seq(dist,name, li):
 
 def main():
     #read dist table
-    dist = {}
+    #dist = {}
     name = {}
     for n,line in enumerate(open(sys.argv[1],'r')):
         if n == 0:
             continue
         spl = line.strip().split('\t')
-        value = spl[1:len(spl)]
-        fvalue = []
-        for x in value:
-            fvalue.append(float(x))
+        #value = spl[1:len(spl)]
+        #fvalue = []
+        #for x in value:
+        #    fvalue.append(float(x))
         name[spl[0]] = n-1
-        dist[spl[0]] = fvalue
+        #dist[spl[0]] = fvalue
 
     #read list
     li = []

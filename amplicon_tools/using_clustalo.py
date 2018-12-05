@@ -8,6 +8,16 @@ python find_center_seq.py list fasta
 import sys
 import screed
 
+def make_fasta_file(file_name, otu_name, li):
+    list_dict = {}
+    for one_list in li:
+        list_dict[li] = 0
+    otu_write = open(otu_name+".fa",'w')
+    for record in screed.open(file_name):
+        if list_dict.has_kye(record.name):
+            print ">"+record.name+"\n"+record.sequence
+    otu_write.close()
+
 def main():
     #read fasta
     
@@ -32,7 +42,7 @@ def main():
         if len(li) > 2:
 
             print otus[i], li
-
+            make_fasta_file(sys.argv[1],otus[i],li)
     
 
 if __name__ == '__main__':

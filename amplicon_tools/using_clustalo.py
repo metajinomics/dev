@@ -14,7 +14,7 @@ def make_fasta_file(file_name, otu_name, li):
         list_dict[one_list] = 0
     otu_write = open(otu_name+".fa",'w')
     for record in screed.open(file_name):
-        if list_dict.has_kye(record.name):
+        if list_dict.has_key(record.name):
             otu_write.write(">"+record.name+"\n"+record.sequence+'\n')
     otu_write.close()
 

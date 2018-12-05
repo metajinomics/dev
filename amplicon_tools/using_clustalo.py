@@ -29,7 +29,9 @@ def main():
     #find represent
     for i in range(2,len(otus)):
         li = seq_list[i].split(',')
-        print otus[i], li
+        if len(li) > 1:
+
+            print otus[i], li
 
     
 

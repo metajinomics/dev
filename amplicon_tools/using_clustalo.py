@@ -41,7 +41,7 @@ def main():
         li = seq_list[i].split(',')
         if len(li) > 2:
             #print otus[i], li
-            make_fasta_file(sys.argv[1],otus[i],li)
+            make_fasta_file(sys.argv[2],otus[i],li)
     
 
 if __name__ == '__main__':

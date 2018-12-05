@@ -7,11 +7,14 @@ python find_center_seq.py distance_matrix.txt
 
 import sys
 
-def get_represent_seq(dist,name, li):
+def get_represent_seq(file_name, name, li, one_otu):
     num = []
     for x in li:
         num.append(name[x])
-
+    
+    #read dist table
+    read_name = open(file_name,'r')
+    lines = read_name.readlines()
     diagonal_dist = {}
     for n,x in enumerate(li):
         temp_num = []
@@ -19,13 +22,21 @@ def get_represent_seq(dist,name, li):
             if y < name[x]:
                 temp_num.append(y)
         temp_dist = []
-        for z in temp_num:
-            temp_dist.append(dist[x][z])
+        spl = lines[name[x]+1].strip().split('\t')
+
+        value = spl[1:len(spl)]
+        fvalue = []
+        for x in value:
+            fvalue.append(float(x))
+
+        for one_temp_num in temp_num:
+            temp_dist.append(fvalue[one_temp_num])
 
         diagonal_dist[n] = temp_dist
         last_num = n
+    read_name.close()
 
-
+    #make full table
     full_dist ={}
     for n in range(0,last_num+1):
         full_dist[n] = diagonal_dist[n]
@@ -35,7 +46,7 @@ def get_represent_seq(dist,name, li):
             else:
                 full_dist[n].append(diagonal_dist[i][n])
 
-
+    #calculate smallest
     smallest = 1000000000
     smallest_id = 0
     for item in full_dist.items():
@@ -45,26 +56,21 @@ def get_represent_seq(dist,name, li):
             smallest_id = item[0]
 
 
-    print li[smallest_id]
+    print one_otu, li[smallest_id]
 
 
 def main():
-    #read dist table
-    #dist = {}
+    #read name of sequence from dist table
+
     name = {}
-    for n,line in enumerate(open(sys.argv[1],'r')):
+    file_name = sys.argv[1]
+    read_name = open(file_name,'r')
+    for n,line in enumerate(read_name):
         if n == 0:
-            print line,
             continue
         spl = line.strip().split('\t')
-        #value = spl[1:len(spl)]
-        #fvalue = []
-        #for x in value:
-        #    fvalue.append(float(x))
         name[spl[0]] = n-1
-        if n % 10000 == 0:
-            print n
-        #dist[spl[0]] = fvalue
+    read_name.close()
 
     #read list
     li = []
@@ -79,12 +85,11 @@ def main():
         else:
             continue
 
-    print otus[0], otus[1], otus[2]
-    spl = seq_list[2].split(',')
-    print len(spl)
-    print spl
 
-    #get_represent_seq(dist,name, li)
+    #find represent
+    for i in range(2,len(otus)):
+        li = seq_list[i].split(',')
+        get_represent_seq(file_name, name, li, otus[i])
 
     
 

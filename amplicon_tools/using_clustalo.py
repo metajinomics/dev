@@ -40,8 +40,7 @@ def main():
     for i in range(2,len(otus)):
         li = seq_list[i].split(',')
         if len(li) > 2:
-
-            print otus[i], li
+            #print otus[i], li
             make_fasta_file(sys.argv[1],otus[i],li)
     
 

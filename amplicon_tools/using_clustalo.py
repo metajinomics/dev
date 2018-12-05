@@ -11,7 +11,7 @@ import screed
 def make_fasta_file(file_name, otu_name, li):
     list_dict = {}
     for one_list in li:
-        list_dict[li] = 0
+        list_dict[one_list] = 0
     otu_write = open(otu_name+".fa",'w')
     for record in screed.open(file_name):
         if list_dict.has_kye(record.name):

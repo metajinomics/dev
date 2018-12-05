@@ -8,23 +8,18 @@ python find_center_seq.py list fasta
 import sys
 import screed
 
-def make_fasta_file(file_name, otu_name, li):
-    list_dict = {}
-    for one_list in li:
-        list_dict[one_list] = 0
+def make_fasta_file(fasta, otu_name, li):
     otu_write = open(otu_name+".fa",'w')
-    count = 0
-    for record in screed.open(file_name):
-        if list_dict.has_key(record.name):
-            otu_write.write(">"+record.name+"\n"+record.sequence+'\n')
-            count += 1
-            if count == len(li):
-                return
+    for one_list in li:
+        if fasta.has_key(one_list):
+            otu_write.write(">"+one_list+'\n'+fasta[one_list]+'\n')
     otu_write.close()
 
 def main():
     #read fasta
-    
+    fasta = {}
+    for record in screed.open(sys.argv[2]):
+        fasta[record.name] = record.sequence
 
     #read list
     li = []
@@ -45,7 +40,7 @@ def main():
         li = seq_list[i].split(',')
         if len(li) > 2:
             #print otus[i], li
-            make_fasta_file(sys.argv[2],otus[i],li)
+            make_fasta_file(fasta,otus[i],li)
     
 
 if __name__ == '__main__':

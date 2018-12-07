@@ -4,7 +4,9 @@ from string import maketrans
 def get_rc(seq):
     seq = seq.upper()
     trans = maketrans("AGCT","TCGA")
-    seq = seq.translate(trans,'xm')
+    if isinstance(seq, unicode):
+        seq = seq.encode("ascii")
+    seq = seq.translate(trans)
     seq = seq[::-1]
     return seq
 
